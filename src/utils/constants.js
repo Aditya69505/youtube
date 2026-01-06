@@ -7,4 +7,7 @@ export const YOUTUBE_VIDEO_API =
   "&regionCode=IN" +
   "&maxResults=50" +
   "&key=" + GOOGLE_API_KEY;
+
+ export const LIVE_CHAT_COUNT = 25;
+
   export const YOUTUBE_SEARCH_API="http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";

@@ -1,12 +1,14 @@
+import { Provider } from "react-redux";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import Body from "./components/Body";
+import Demo from "./components/Demo";
+import Demo2 from "./components/Demo2";
+import Head from "./components/Head";
+import MainContainer from "./components/MainContainer";
+import WatchPage from "./components/WatchPage";
+import store from "./utils/store";
 
-import { Provider } from 'react-redux'
-import './App.css'
-import Body from './components/Body'
-import store from "./utils/store"
-import Head from './components/Head'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import MainComponent from './components/MainContainer'
-import WatchPage from './components/WatchPage'
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -14,30 +16,48 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <MainComponent />,
+        element: <MainContainer />,
       },
       {
-        path: "/watch",
+        path: "watch",
         element: <WatchPage />,
+      },
+      {
+        path: "demo",
+        element: (
+          <>
+            <Demo />
+            <Demo2 />
+          </>
+        ),
       },
     ],
   },
 ]);
+
 function App() {
-
-
   return (
-    <>
     <Provider store={store}>
-    <div>
-     <Head />
-      <RouterProvider router={appRouter} />
+      <div>
+        <Head />
+        <RouterProvider router={appRouter} />
 
-     </div> 
-     </Provider>
-    </>
-  )
-
+        {/**
+         *
+         * Head
+         * Body
+         *  Sidebar
+         *    MenuItems
+         *  MainContainer
+         *    ButtonsList
+         *    VideoContainer
+         *      VideoCard
+         *
+         *
+         */}
+      </div>
+    </Provider>
+  );
 }
 
-export default App
+export default App;

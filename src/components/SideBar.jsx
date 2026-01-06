@@ -16,6 +16,10 @@ const SideBar = () => {
                  hover:bg-gray-400 hover:text-black transition">
     🏠 Home
   </li>
+   <li className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer
+                 hover:bg-gray-400 hover:text-black transition">
+    <Link to="/demo">Demo</Link>
+  </li>
 
   
 

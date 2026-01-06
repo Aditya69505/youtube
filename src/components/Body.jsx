@@ -6,10 +6,11 @@ import { Outlet } from 'react-router-dom'
 
 const Body = () => {
   return (
-    <div className='grid grid-flow-col'>
-  
+    <div className='flex flex-col md:flex-row'>
       <SideBar/>
-      <Outlet />
+      <div className='flex-1'>
+        <Outlet />
+      </div>
     </div>
   )
 }
